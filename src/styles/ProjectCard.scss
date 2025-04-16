@@ -1,0 +1,126 @@
+@import 'variables';
+
+.project-card {
+  background-color: lighten($dark-bg, 3%);
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform $transition-normal, box-shadow $transition-normal;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  
+  &.featured {
+    position: relative;
+    
+    &::before {
+      content: 'Featured';
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: $primary-color;
+      color: white;
+      padding: 4px 10px;
+      border-radius: $border-radius-pill;
+      font-size: 0.8rem;
+      font-weight: 500;
+      z-index: 1;
+    }
+  }
+  
+  .project-image {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform $transition-normal;
+    }
+    
+    .project-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba($dark-bg, 0.85);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity $transition-normal;
+    }
+    
+    .project-links {
+      display: flex;
+      gap: $spacing-md;
+      
+      @media (max-width: $breakpoint-sm) {
+        flex-direction: column;
+        width: 80%;
+        
+        a {
+          text-align: center;
+        }
+      }
+    }
+  }
+  
+  .project-content {
+    padding: $spacing-lg;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .project-title {
+    font-size: 1.5rem;
+    margin-bottom: $spacing-sm;
+    color: $light-text;
+  }
+  
+  .project-description {
+    color: $gray-text;
+    font-size: 0.95rem;
+    margin-bottom: $spacing-md;
+    flex-grow: 1;
+  }
+  
+  .project-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-xs;
+    
+    .tech-tag {
+      display: inline-block;
+      padding: 4px 10px;
+      background-color: lighten($dark-bg, 7%);
+      border-radius: $border-radius-pill;
+      font-size: 0.8rem;
+      color: $gray-text;
+      transition: all $transition-fast;
+      
+      &:hover {
+        background-color: $primary-color;
+        color: white;
+      }
+    }
+  }
+  
+  &:hover {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    
+    .project-image {
+      img {
+        transform: scale(1.05);
+      }
+      
+      .project-overlay {
+        opacity: 1;
+      }
+    }
+  }
+} 

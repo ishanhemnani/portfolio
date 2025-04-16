@@ -1,0 +1,221 @@
+@import 'variables';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: $font-body;
+  background-color: $dark-bg;
+  color: $light-text;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-heading;
+  font-weight: 600;
+  margin-bottom: $spacing-md;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3rem;
+  
+  @media (max-width: $breakpoint-md) {
+    font-size: 2.5rem;
+  }
+}
+
+h2 {
+  font-size: 2.5rem;
+  
+  @media (max-width: $breakpoint-md) {
+    font-size: 2rem;
+  }
+}
+
+h3 {
+  font-size: 2rem;
+  
+  @media (max-width: $breakpoint-md) {
+    font-size: 1.75rem;
+  }
+}
+
+p {
+  margin-bottom: $spacing-md;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+  transition: color $transition-fast;
+  
+  &:hover {
+    color: lighten($primary-color, 10%);
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-lg;
+}
+
+.section {
+  padding: $spacing-xxl 0;
+}
+
+// Utility classes
+.text-center {
+  text-align: center;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, $primary-color, $secondary-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// Gumroad-inspired button styles
+.btn {
+  display: inline-block;
+  padding: $spacing-sm $spacing-lg;
+  border-radius: $border-radius-md;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all $transition-normal;
+  font-family: $font-heading;
+  border: none;
+  
+  &:focus {
+    outline: none;
+  }
+  
+  &-primary {
+    background-color: $primary-color;
+    color: white;
+    
+    &:hover {
+      background-color: lighten($primary-color, 5%);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba($primary-color, 0.4);
+    }
+    
+    &:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 5px rgba($primary-color, 0.4);
+    }
+  }
+  
+  &-outline {
+    background-color: transparent;
+    border: 2px solid $primary-color;
+    color: $primary-color;
+    
+    &:hover {
+      background-color: $primary-color;
+      color: white;
+      transform: translateY(-2px);
+    }
+    
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+// Modern card styles
+.card {
+  background-color: lighten($dark-bg, 5%);
+  border-radius: $border-radius-lg;
+  padding: $spacing-lg;
+  transition: transform $transition-normal, box-shadow $transition-normal;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+}
+
+// Flex utilities
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+// Grid
+.grid {
+  display: grid;
+  gap: $spacing-lg;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+  
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+  
+  @media (max-width: $breakpoint-lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Animations
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+} 

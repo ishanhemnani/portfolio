@@ -1,0 +1,61 @@
+@import 'variables';
+
+.section {
+  padding: $spacing-xxl 0;
+  position: relative;
+  
+  &:nth-child(odd) {
+    background-color: lighten($dark-bg, 1%);
+  }
+  
+  .section-header {
+    margin-bottom: $spacing-xxl;
+    max-width: 700px;
+    
+    &.text-center {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  
+  .section-title {
+    position: relative;
+    font-size: 2.5rem;
+    margin-bottom: $spacing-md;
+    display: inline-block;
+    
+    @media (max-width: $breakpoint-md) {
+      font-size: 2rem;
+    }
+    
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, $primary-color, $secondary-color);
+      border-radius: $border-radius-pill;
+    }
+    
+    .text-center &::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  
+  .section-subtitle {
+    font-size: 1.1rem;
+    color: $gray-text;
+    max-width: 600px;
+    
+    @media (max-width: $breakpoint-md) {
+      font-size: 1rem;
+    }
+  }
+  
+  .section-content {
+    position: relative;
+  }
+} 

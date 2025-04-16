@@ -1,0 +1,134 @@
+@import 'variables';
+
+.footer {
+  background-color: lighten($dark-bg, 2%);
+  padding: $spacing-xxl 0 $spacing-lg;
+  margin-top: $spacing-xxl;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xxl;
+  }
+  
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: $spacing-xl;
+    
+    @media (max-width: $breakpoint-md) {
+      flex-direction: column;
+    }
+  }
+  
+  .footer-branding {
+    max-width: 350px;
+    
+    .footer-title {
+      font-size: 1.75rem;
+      margin-bottom: $spacing-sm;
+    }
+    
+    .footer-tagline {
+      color: $gray-text;
+      font-size: 1rem;
+    }
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: $spacing-xxl;
+    flex-wrap: wrap;
+    
+    @media (max-width: $breakpoint-sm) {
+      flex-direction: column;
+      gap: $spacing-xl;
+    }
+    
+    h4 {
+      color: $light-text;
+      font-size: 1.1rem;
+      margin-bottom: $spacing-md;
+      position: relative;
+      display: inline-block;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background-color: $primary-color;
+      }
+    }
+  }
+  
+  .footer-nav {
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-sm;
+      
+      li a {
+        color: $gray-text;
+        transition: color $transition-fast;
+        
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+  
+  .footer-contact {
+    p {
+      margin-bottom: $spacing-sm;
+      
+      a {
+        color: $gray-text;
+        transition: color $transition-fast;
+        
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+  
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: $spacing-lg;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    
+    @media (max-width: $breakpoint-md) {
+      flex-direction: column;
+      gap: $spacing-lg;
+      text-align: center;
+    }
+    
+    .copyright {
+      color: $gray-text;
+      font-size: 0.9rem;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: $spacing-md;
+      
+      a {
+        color: $gray-text;
+        transition: color $transition-fast, transform $transition-fast;
+        
+        &:hover {
+          color: $light-text;
+        }
+      }
+    }
+  }
+} 
