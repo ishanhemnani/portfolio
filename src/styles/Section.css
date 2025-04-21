@@ -1,0 +1,86 @@
+.section {
+  position: relative;
+  padding: 6rem 0;
+  overflow: hidden;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.section-title span {
+  color: #6c63ff;
+}
+
+.section-subtitle {
+  color: #888;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin-bottom: 3rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-header .section-subtitle {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-content {
+  position: relative;
+  z-index: 2;
+}
+
+.section-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.section-bg-gradient {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(108, 99, 255, 0.05) 0%, rgba(108, 99, 255, 0.01) 100%);
+  filter: blur(80px);
+  z-index: 0;
+}
+
+.section-bg-gradient:nth-child(1) {
+  top: -20%;
+  right: -10%;
+}
+
+.section-bg-gradient:nth-child(2) {
+  bottom: -30%;
+  left: -10%;
+  background: linear-gradient(135deg, rgba(255, 101, 132, 0.05) 0%, rgba(255, 101, 132, 0.01) 100%);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 0;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+  }
+  
+  .section-header {
+    margin-bottom: 3rem;
+  }
+} 

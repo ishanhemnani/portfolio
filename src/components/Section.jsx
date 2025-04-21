@@ -1,6 +1,5 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import '../styles/Section.scss';
+import '../styles/Section.css';
 
 const Section = ({ 
   id, 

@@ -1,17 +1,15 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './styles/global.scss';
 
 // Components
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Header from './components/Header.jsx';
+import Footer from './components/Footer.jsx';
 
 // Pages
-import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
-import WorkPage from './pages/WorkPage';
-import ContentPage from './pages/ContentPage';
-import ContactPage from './pages/ContactPage';
+import HomePage from './pages/HomePage.jsx';
+import AboutPage from './pages/AboutPage.jsx';
+import WorkPage from './pages/WorkPage.jsx';
+import ContentPage from './pages/ContentPage.jsx';
+import ContactPage from './pages/ContactPage.jsx';
 
 function App() {
   return (
@@ -33,4 +31,4 @@ function App() {
   );
 }
 
-export default App;
+export default App; 

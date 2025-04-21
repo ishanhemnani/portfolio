@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import '../styles/Header.scss';
+import '../styles/Header.css';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);

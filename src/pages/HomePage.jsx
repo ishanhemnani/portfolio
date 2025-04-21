@@ -1,9 +1,8 @@
-import React from 'react';
-import Hero from '../components/Hero';
-import Section from '../components/Section';
-import ProjectCard from '../components/ProjectCard';
-import ContentCard from '../components/ContentCard';
-import Contact from '../components/Contact';
+import Hero from '../components/Hero.jsx';
+import Section from '../components/Section.jsx';
+import ProjectCard from '../components/ProjectCard.jsx';
+import ContentCard from '../components/ContentCard.jsx';
+import Contact from '../components/Contact.jsx';
 
 // Import dummy project images (you would replace these with actual images)
 const projectImg1 = '/project-placeholder.jpg';
